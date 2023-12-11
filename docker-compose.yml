@@ -1,0 +1,8 @@
+services:
+  api:
+    build: api
+    restart: unless-stopped
+    volumes:
+      - ./api:/app
+    ports:
+      - 8000:8000
