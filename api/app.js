@@ -1,12 +1,9 @@
 import { Hono } from "./deps.js";
-import { postgres } from "./deps.js";
+import * as todoController from "./todoController.js";
 
 const app = new Hono();
-const sql = postgres();
 
-app.get("/", async (c) => {
-  const todos = await sql`SELECT * FROM todos`;
-  return c.json(todos);
-});
+
+app.get("/todos", todoController.showForm);
 
 export default app;
