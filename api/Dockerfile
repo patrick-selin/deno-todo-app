@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD [ "run", "--allow-net", "--unstable", "--watch", "app-run.js" ]
+CMD [ "run", "--allow-net",  "--allow-env", "--unstable", "--watch", "app-run.js" ]

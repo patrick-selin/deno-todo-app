@@ -8,6 +8,8 @@ services:
       - 8000:8000
     depends_on:
       - database
+    env_file:
+      - project.env
 
   database:
     container_name: postgresql_todo-database
