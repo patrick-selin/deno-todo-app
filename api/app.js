@@ -5,8 +5,8 @@ const app = new Hono();
 const sql = postgres();
 
 app.get("/", async (c) => {
-    const todos = await sql`SELECT * FROM todos`;
-    return c.json(todos);
-  });
+  const todos = await sql`SELECT * FROM todos`;
+  return c.json(todos);
+});
 
 export default app;
