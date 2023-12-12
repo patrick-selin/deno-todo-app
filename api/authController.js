@@ -19,13 +19,11 @@ const registerUser = async (c) => {
   }
 
   const user = {
-    id: crypto.randomUUID(),
     email: body.email,
     passwordHash: scrypt.hash(body.password),
   };
 
   await userService.createUser(user);
-  await sessionService.createSession(c, user);
 
   return c.redirect("/");
 };
@@ -40,8 +38,7 @@ const loginUser = async (c) => {
     return c.text(`No user with the email ${body.email} exists.`);
   }
 
-  const passwordsMatch = scrypt.verify(body.password, user.passwordHash);
-
+  const passwordsMatch = scrypt.verify(body.password, user.password_hash);
   if (!passwordsMatch) {
     return c.text(`Incorrect password.`);
   }
