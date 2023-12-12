@@ -8,5 +8,6 @@ app.post("/todos", todoController.createTodo);
 
 app.get("/todos/:id", todoController.showTodo);
 app.post("/todos/:id", todoController.updateTodo);
+app.post("/todos/:id/delete", todoController.deleteTodo);
 
 export default app;

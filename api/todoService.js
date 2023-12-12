@@ -17,4 +17,8 @@ const updateTodo = async (id, todo) => {
   await sql`UPDATE todos SET todo = ${todo.todo} WHERE id = ${id}`;
 };
 
-export { listTodos, createTodo, getTodo, updateTodo };
+const deleteTodo = async (id) => {
+  await sql`DELETE FROM todos WHERE id = ${id}`;
+};
+
+export { listTodos, createTodo, getTodo, updateTodo, deleteTodo };

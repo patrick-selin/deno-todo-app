@@ -23,10 +23,16 @@ const showTodo = async (c) => {
 };
 
 const updateTodo = async (c) => {
-    const id = c.req.param("id");
-    const body = await c.req.parseBody();
-    await todoService.updateTodo(id, body);
-    return c.redirect(`/todos/${id}`);
-  };
+  const id = c.req.param("id");
+  const body = await c.req.parseBody();
+  await todoService.updateTodo(id, body);
+  return c.redirect(`/todos/${id}`);
+};
 
-export { showForm, createTodo, showTodo, updateTodo };
+const deleteTodo = async (c) => {
+  const id = c.req.param("id");
+  await todoService.deleteTodo(id);
+  return c.redirect("/todos");
+};
+
+export { showForm, createTodo, showTodo, updateTodo, deleteTodo };
