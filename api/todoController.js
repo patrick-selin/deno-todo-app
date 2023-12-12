@@ -22,4 +22,11 @@ const showTodo = async (c) => {
   );
 };
 
-export { showForm, createTodo, showTodo };
+const updateTodo = async (c) => {
+    const id = c.req.param("id");
+    const body = await c.req.parseBody();
+    await todoService.updateTodo(id, body);
+    return c.redirect(`/todos/${id}`);
+  };
+
+export { showForm, createTodo, showTodo, updateTodo };

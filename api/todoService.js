@@ -9,8 +9,12 @@ const createTodo = async (todo) => {
 };
 
 const getTodo = async (id) => {
-    const rows = await sql`SELECT * FROM todos WHERE id = ${ id }`;
-    return rows?.[0] ?? {};
-  };
+  const rows = await sql`SELECT * FROM todos WHERE id = ${id}`;
+  return rows?.[0] ?? {};
+};
 
-export { listTodos, createTodo, getTodo };
+const updateTodo = async (id, todo) => {
+  await sql`UPDATE todos SET todo = ${todo.todo} WHERE id = ${id}`;
+};
+
+export { listTodos, createTodo, getTodo, updateTodo };
