@@ -5,7 +5,12 @@ const listTodos = async () => {
 };
 
 const createTodo = async (todo) => {
-    await sql`INSERT INTO todos (todo) VALUES (${ todo.todo })`;
+  await sql`INSERT INTO todos (todo) VALUES (${todo.todo})`;
+};
+
+const getTodo = async (id) => {
+    const rows = await sql`SELECT * FROM todos WHERE id = ${ id }`;
+    return rows?.[0] ?? {};
   };
 
-export { listTodos, createTodo };
+export { listTodos, createTodo, getTodo };

@@ -5,5 +5,6 @@ const app = new Hono();
 
 app.get("/todos", todoController.showForm);
 app.post("/todos", todoController.createTodo);
+app.get("/todos/:id", todoController.showTodo);
 
 export default app;

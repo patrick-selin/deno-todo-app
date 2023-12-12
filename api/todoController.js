@@ -10,11 +10,16 @@ const showForm = async (c) => {
 };
 
 const createTodo = async (c) => {
-    const body = await c.req.parseBody();
-    await todoService.createTodo(body);
-    return c.redirect("/todos");
-  };
+  const body = await c.req.parseBody();
+  await todoService.createTodo(body);
+  return c.redirect("/todos");
+};
 
+const showTodo = async (c) => {
+  const id = c.req.param("id");
+  return c.html(
+    eta.render("todo.eta", { todo: await todoService.getTodo(id) })
+  );
+};
 
-
-export { showForm, createTodo };
+export { showForm, createTodo, showTodo };
