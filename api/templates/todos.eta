@@ -12,12 +12,14 @@
     </form>
     <p>Existing todos:</p>
     <ul>
-          <li>
-        <a href="/todos/1">Change database</a>
-        <form method="POST" action="/todos/1/delete">
+    <% it.todos.forEach((todo) => { %>
+      <li>
+        <a href="/todos/<%= todo.id %>"><%= todo.todo %></a>
+        <form method="POST" action="/todos/<%= todo.id %>/delete">
           <input type="submit" value="Delete" />
         </form>
       </li>
-        </ul>
+    <% }); %>
+    </ul>
   </body>
 </html>
