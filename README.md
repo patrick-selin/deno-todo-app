@@ -11,8 +11,7 @@ Fullstack TODO app - Deno, PostgreSQL, Flyway, Docker, Signed Cookies, Sessions,
 - Authentication and Authorization for user registration and login/logout.
 - User management and user-specific data.
 
-(add picture:)
-![alt text](http://url/to/img.png)
+![](https://github.com/patrick-selin/todo-app/todo.gif)
 
 
 ### Built with
