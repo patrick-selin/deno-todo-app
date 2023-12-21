@@ -6,7 +6,7 @@ Fullstack TODO app - Deno, PostgreSQL, Flyway, Docker, Signed Cookies, Sessions,
 
 - CRUD operations to create, read, update, and delete todos.
 - Register and log in/log out as a user.
-- Model-Viev-Controller layer application structure
+- Model-View-Controller layer application structure
 - Signed user Cookies and Sessions with Deno
 - Authentication and Authorization for user registration and login/logout.
 - User management and user-specific data.
